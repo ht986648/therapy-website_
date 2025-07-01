@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { MapPin, Phone, Mail, Clock, Star, Heart, Shield, Users, ChevronDown, Brain, Users2, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Star, Heart, Shield, Users, ChevronDown, Brain, Users2, Sparkles, Award, BookOpen, Calendar, CheckCircle } from 'lucide-react';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -131,58 +131,165 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section id="about" className="py-24 bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-20 blur-3xl"></div>
+          <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-gradient-to-tr from-amber-100 to-orange-100 rounded-full opacity-20 blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-bl from-purple-100 to-pink-100 rounded-full opacity-15 blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Left Column - Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
-                  About Me
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-8 shadow-lg">
+                  <Heart className="w-8 h-8 text-white" />
+                </div>
+                
+                <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent mb-6 leading-tight">
+                  About Dr. Blake
                 </h2>
-                <div className="w-20 h-1 bg-amber-500 mb-8"></div>
+                
+                <div className="flex items-center mb-8">
+                  <div className="h-1 w-12 bg-gradient-to-r from-transparent to-amber-400 rounded-full"></div>
+                  <div className="h-1 w-16 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full mx-2"></div>
+                  <div className="h-1 w-12 bg-gradient-to-r from-amber-500 to-transparent rounded-full"></div>
+                </div>
               </div>
               
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p>
-                  Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care.
+                <p className="text-xl text-gray-800 font-medium">
+                  Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, dedicated to creating transformative healing experiences through compassionate, evidence-based care.
                 </p>
                 <p>
-                  Whether you meet in her Maplewood Drive office or connect virtually via Zoom, Dr. Blake is committed to creating a safe, supportive space for you to overcome anxiety, strengthen relationships, and heal from trauma.
+                  With eight years of specialized experience and over 500 successful client sessions, Dr. Blake expertly blends cognitive-behavioral therapy, mindfulness practices, and trauma-informed approaches to meet each client's unique needs.
+                </p>
+                <p>
+                  Whether you connect in her welcoming Maplewood Drive office or through secure virtual sessions, Dr. Blake is committed to providing a safe, supportive sanctuary where you can overcome anxiety, strengthen relationships, and embark on your journey toward healing and personal growth.
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 gap-8 pt-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-900 mb-2">8+</div>
-                  <div className="text-gray-600 font-medium">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-900 mb-2">500+</div>
-                  <div className="text-gray-600 font-medium">Client Sessions</div>
-                </div>
+              {/* Stats Cards */}
+              <div className="grid grid-cols-2 gap-6 pt-8">
+                <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Award className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-1">8+</div>
+                    <div className="text-gray-600 font-medium">Years Experience</div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Users className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-800 bg-clip-text text-transparent mb-1">500+</div>
+                    <div className="text-gray-600 font-medium">Client Sessions</div>
+                  </CardContent>
+                </Card>
               </div>
 
+              {/* Credentials & Approach */}
               <div className="space-y-6 pt-8">
-                <div>
-                  <h3 className="font-semibold text-blue-900 mb-2">Office Hours</h3>
-                  <p className="text-gray-700">In-person: Tue & Thu, 10 AM–6 PM</p>
-                  <p className="text-gray-700">Virtual: Mon, Wed & Fri, 1 PM–5 PM</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-blue-900 mb-2">Contact</h3>
-                  <p className="text-gray-700">Phone: (323) 555-0192</p>
-                  <p className="text-gray-700">Email: serena@blakepsychology.com</p>
+                <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <BookOpen className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-blue-900 mb-2 text-lg">Therapeutic Approach</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          Integrating evidence-based modalities including CBT, mindfulness-based interventions, and trauma-informed care to create personalized treatment plans that honor your unique journey.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <Calendar className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-blue-900 mb-2 text-lg">Flexible Scheduling</h3>
+                        <div className="text-gray-700 space-y-1">
+                          <p><span className="font-medium">In-person:</span> Tue & Thu, 10 AM–6 PM</p>
+                          <p><span className="font-medium">Virtual:</span> Mon, Wed & Fri, 1 PM–5 PM</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Contact Quick Info */}
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 text-white">
+                <h3 className="font-semibold mb-4 text-lg">Ready to Connect?</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-blue-200" />
+                    <span>(323) 555-0192</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-blue-200" />
+                    <span>serena@blakepsychology.com</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="w-5 h-5 text-blue-200" />
+                    <span>1287 Maplewood Drive, Los Angeles, CA</span>
+                  </div>
                 </div>
               </div>
             </div>
             
-            <div className="flex justify-center">
+            {/* Right Column - Image & Visual Elements */}
+            <div className="flex justify-center lg:justify-end">
               <div className="relative">
-                <img 
-                  src="https://quilted-libra-91f.notion.site/image/attachment%3Afcdeffc3-7fce-4ca7-a4ea-a0888f182399%3Aimage.png?table=block&id=21f4db5d-d615-8076-8a1c-fd184ea4e5df&spaceId=e434db5d-d615-814a-b090-0003034cd63a&width=2000&userId=&cache=v2" 
-                  alt="Dr. Serena Blake" 
-                  className="w-96 h-[500px] object-cover rounded-lg shadow-2xl"
-                />
+                {/* Main Image */}
+                <div className="relative z-10">
+                  <img 
+                    src="https://quilted-libra-91f.notion.site/image/attachment%3Afcdeffc3-7fce-4ca7-a4ea-a0888f182399%3Aimage.png?table=block&id=21f4db5d-d615-8076-8a1c-fd184ea4e5df&spaceId=e434db5d-d615-814a-b090-0003034cd63a&width=2000&userId=&cache=v2" 
+                    alt="Dr. Serena Blake" 
+                    className="w-96 h-[500px] object-cover rounded-2xl shadow-2xl"
+                  />
+                  
+                  {/* Floating credential badges */}
+                  <div className="absolute -top-4 -left-4 bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-blue-900">Licensed PsyD</div>
+                        <div className="text-xs text-gray-600">California</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center">
+                        <Star className="w-4 h-4 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-emerald-900">Specialized Care</div>
+                        <div className="text-xs text-gray-600">Evidence-Based</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Background decorative elements */}
+                <div className="absolute -inset-8 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-3xl opacity-20 -z-10"></div>
+                <div className="absolute -inset-4 bg-gradient-to-tr from-amber-100 to-orange-100 rounded-2xl opacity-30 -z-10 rotate-3"></div>
               </div>
             </div>
           </div>
