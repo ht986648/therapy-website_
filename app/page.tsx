@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { MapPin, Phone, Mail, Clock, Star, Heart, Shield, Users, ChevronDown } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Star, Heart, Shield, Users, ChevronDown, Brain, Users2, Sparkles } from 'lucide-react';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -190,81 +190,157 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
-              Services
+      <section id="services" className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-100 rounded-full opacity-20 blur-3xl"></div>
+          <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-amber-100 rounded-full opacity-20 blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-indigo-100 rounded-full opacity-10 blur-2xl"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-8 shadow-lg">
+              <Heart className="w-8 h-8 text-white" />
+            </div>
+            
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent mb-6 leading-tight">
+              Areas of Focus
             </h2>
-            <div className="w-20 h-1 bg-amber-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Personalized therapy approaches tailored to your unique needs and goals
+            
+            <div className="flex items-center justify-center mb-8">
+              <div className="h-1 w-12 bg-gradient-to-r from-transparent to-amber-400 rounded-full"></div>
+              <div className="h-1 w-16 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full mx-2"></div>
+              <div className="h-1 w-12 bg-gradient-to-r from-amber-500 to-transparent rounded-full"></div>
+            </div>
+            
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Compassionate, evidence-based therapy approaches designed to support your journey toward healing, growth, and emotional well-being
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
-              <div className="relative">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
+            {/* Anxiety & Stress Management */}
+            <Card className="group overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-0 hover:-translate-y-2 bg-white/80 backdrop-blur-sm">
+              <div className="relative overflow-hidden">
                 <img 
-                  src="https://images.pexels.com/photos/7176026/pexels-photo-7176026.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" 
-                  alt="Anxiety & Stress Management" 
-                  className="w-full h-56 object-cover"
+                  src="https://images.pexels.com/photos/3759657/pexels-photo-3759657.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
+                  alt="Peaceful meditation and mindfulness practice" 
+                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm">
+                  <Brain className="w-6 h-6 text-blue-600" />
+                </div>
               </div>
+              
               <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-semibold text-blue-900">
-                  Anxiety & Stress Management
+                <CardTitle className="text-2xl font-bold text-blue-900 group-hover:text-blue-800 transition-colors duration-300">
+                  Therapy for Anxiety and Stress
                 </CardTitle>
               </CardHeader>
+              
               <CardContent>
-                <CardDescription className="text-gray-700 leading-relaxed mb-4">
-                  Learn effective coping strategies and mindfulness techniques to manage anxiety and stress. Together, we'll identify triggers and develop personalized tools to help you find calm and confidence in daily life.
+                <CardDescription className="text-gray-600 leading-relaxed mb-6 text-base">
+                  Discover inner peace through proven mindfulness techniques and personalized coping strategies. We'll work together to identify your unique triggers and build a toolkit for lasting calm and confidence in daily life.
                 </CardDescription>
-                <div className="font-bold text-blue-900">$200 / individual session</div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                    $200
+                  </div>
+                  <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    Individual Session
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
-              <div className="relative">
+            {/* Relationship Counseling */}
+            <Card className="group overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-0 hover:-translate-y-2 bg-white/80 backdrop-blur-sm">
+              <div className="relative overflow-hidden">
                 <img 
-                  src="https://images.pexels.com/photos/8535230/pexels-photo-8535230.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" 
-                  alt="Relationship Counseling" 
-                  className="w-full h-56 object-cover"
+                  src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
+                  alt="Couple holding hands in supportive therapy session" 
+                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm">
+                  <Users2 className="w-6 h-6 text-emerald-600" />
+                </div>
               </div>
+              
               <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-semibold text-blue-900">
-                  Relationship Counseling
+                <CardTitle className="text-2xl font-bold text-blue-900 group-hover:text-emerald-800 transition-colors duration-300">
+                  Therapy for Couples and Grief
                 </CardTitle>
               </CardHeader>
+              
               <CardContent>
-                <CardDescription className="text-gray-700 leading-relaxed mb-4">
-                  Strengthen communication, rebuild trust, and deepen emotional connections. Whether you're dating, married, or navigating family dynamics, I'll help you create healthier, more fulfilling relationships.
+                <CardDescription className="text-gray-600 leading-relaxed mb-6 text-base">
+                  Transform your connections through enhanced communication and deeper understanding. Whether navigating partnership challenges, family dynamics, or processing loss, we'll build bridges to stronger, more fulfilling relationships and healing.
                 </CardDescription>
-                <div className="font-bold text-blue-900">$240 / couples session</div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-800 bg-clip-text text-transparent">
+                    $240
+                  </div>
+                  <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    Couples Session
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
-              <div className="relative">
+            {/* Trauma Recovery */}
+            <Card className="group overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-0 hover:-translate-y-2 bg-white/80 backdrop-blur-sm">
+              <div className="relative overflow-hidden">
                 <img 
-                  src="https://images.pexels.com/photos/7176205/pexels-photo-7176205.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" 
-                  alt="Trauma Recovery" 
-                  className="w-full h-56 object-cover"
+                  src="https://images.pexels.com/photos/4101555/pexels-photo-4101555.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
+                  alt="Serene therapy space promoting healing and recovery" 
+                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm">
+                  <Sparkles className="w-6 h-6 text-purple-600" />
+                </div>
               </div>
+              
               <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-semibold text-blue-900">
-                  Trauma Recovery
+                <CardTitle className="text-2xl font-bold text-blue-900 group-hover:text-purple-800 transition-colors duration-300">
+                  Therapy for Social Connection Individuals & Interracial Families
                 </CardTitle>
               </CardHeader>
+              
               <CardContent>
-                <CardDescription className="text-gray-700 leading-relaxed mb-4">
-                  Heal from past experiences with evidence-based trauma therapy approaches. In a safe, supportive environment, we'll work together to process difficult memories and build resilience for your future.
+                <CardDescription className="text-gray-600 leading-relaxed mb-6 text-base">
+                  Build meaningful connections and navigate unique cultural dynamics with specialized support. Whether strengthening social bonds or addressing the complexities of interracial family experiences, we'll create pathways to belonging and understanding.
                 </CardDescription>
-                <div className="font-bold text-blue-900">$200 / individual session</div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="text-xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent">
+                    $200
+                  </div>
+                  <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    Individual Session
+                  </div>
+                </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center gap-4 bg-white/60 backdrop-blur-sm rounded-2xl px-8 py-4 shadow-lg">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-gray-700 font-medium">Ready to begin your journey?</span>
+              <button 
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Schedule Consultation
+              </button>
+            </div>
           </div>
         </div>
       </section>
